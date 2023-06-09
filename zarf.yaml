@@ -60,7 +60,7 @@ components:
 
   images:
     # renovate: datasource=docker depName=ghcr.io/actions/gha-runner-scale-set-controller
-    - ghcr.io/actions/gha-runner-scale-set-controller:0.3.0
+    - ghcr.io/actions/gha-runner-scale-set-controller:0.4.0
     - ghcr.io/actions/actions-runner:latest
     - docker:dind
 
