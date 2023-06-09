@@ -61,9 +61,9 @@ components:
   images:
     - ghcr.io/actions/actions-runner:latest
     - docker:dind
-    # renovate: datasource=docker depName=ghcr.io/actions/gha-runner-scale-set-controller
+    # renovate: datasource=docker
     - ghcr.io/actions/gha-runner-scale-set-controller:0.3.0
-    
+
     # Required if `zarf.dev/agent: ignore` namespace label is not used:
     # - summerwind/actions-runner:latest
     # - docker:dind
