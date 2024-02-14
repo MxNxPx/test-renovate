@@ -1,0 +1,43 @@
+variables:
+  - name: FLAVOR
+    default: upstream
+
+  - name: PKG
+
+includes:
+  - create: ./tasks/create.yaml
+  - setup: ./tasks/setup.yaml
+  - deploy: ./tasks/deploy.yaml
+  - test: ./tasks/test.yaml
+  - lint: ./tasks/lint.yaml
+  # renovate: datasource=github-tags depName=defenseunicorns/uds-common versioning=semver
+  - common-setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.1.4/tasks/setup.yaml
+tasks:
+  - name: setup-cluster
+    actions:
+      - task: setup:k3d-test-cluster
+
+  - name: registry-login
+    actions:
+      - task: common-setup:registry-login
+        with:
+          registry: ${REGISTRY}
+          registryUsername: ${REGISTRY_USERNAME}
+          registryPassword: ${REGISTRY_PASSWORD}
+          registryRetryInterval: ${REGISTRY_RETRY_INTERVAL}
+
+  - name: test-uds-core
+    actions:
+      - task: test:uds-core
+
+  - name: test-uds-core-upgrade
+    actions:
+      - task: test:uds-core-upgrade
+
+  - name: lint-check
+    actions:
+      - task: lint:check
+
+  - name: lint-fix
+    actions:
+      - task: lint:fix

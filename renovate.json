@@ -18,16 +18,20 @@
     {
       "fileMatch": ["^zarf.yaml$"],
       "matchStrings": [
-        "# renovate: datasource=docker( versioning=(?<versioning>.*?))?\n\\s*-\\s+(?<depName>[^:]+):(?<currentValue>.*)"
+        "# renovate: datasource=docker( versioning=(?<versioning>.*?))?\n\\s*-\\s+(?<depName>[^:]+):(?<currentValue>.*)",
+        "url: oci://(?<depName>.*?)\n\\s*version: (?<currentValue>.*)\n"
       ],
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^zarf.yaml$"],
+      "fileMatch": ["\\.*\\.ya?ml$", "^\\.vscode/settings\\.json$"],
       "matchStrings": [
-        "url: oci://(?<depName>.*?)\n\\s*version: (?<currentValue>.*)\n"
+        "# renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(version:|ref:) (?<currentValue>.*)",
+        "# renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(https:\/\/raw.githubusercontent.com\/defenseunicorns\/uds-common\/)(?<currentValue>[^\\s]+)\/",
+        "\/\/ renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(https:\/\/raw.githubusercontent.com\/defenseunicorns\/zarf\/)(?<currentValue>[^\\s]+)\/"
       ],
-      "datasourceTemplate": "docker"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "datasourceTemplate": "github-tags"
     }
   ],
   "packageRules": [
