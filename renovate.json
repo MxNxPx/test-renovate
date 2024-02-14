@@ -8,8 +8,6 @@
   "rebaseStalePrs": true,
   "dependencyDashboard": true,
   "commitMessageSuffix": "[ci skip]",
-  "platform": "github",
-  "onboarding": false,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "rebaseWhen": "conflicted",
   "commitBodyTable": true,
