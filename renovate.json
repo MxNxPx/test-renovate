@@ -22,13 +22,11 @@
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["\\.*\\.ya?ml$", "^\\.vscode/settings\\.json$"],
+      "fileMatch": [".*(\\.ya?ml|\\.json)$"],
       "matchStrings": [
-        "# renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(version:|ref:) (?<currentValue>.*)",
-        "# renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(https:\/\/raw.githubusercontent.com\/defenseunicorns\/uds-common\/)(?<currentValue>[^\\s]+)\/",
-        "\/\/ renovate: datasource=github-tags depName=(?<depName>[^ ]+) versioning=(?<versioning>.*?)( extractVersion=(?<extractVersion>.*?))?\n.*?(https:\/\/raw.githubusercontent.com\/defenseunicorns\/zarf\/)(?<currentValue>[^\\s]+)\/"
+         "https:\\/\\/raw\\.githubusercontent\\.com\\/(?<depName>[^\\/]+\\/[^\\/]+)\\/(?<currentValue>[^\\/]+)"
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "github-tags"
     }
   ],
