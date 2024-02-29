@@ -31,7 +31,7 @@
         "default: ['\"]?(?<depname>[^\"'\\s]+):(?<currentValue>[^\"'\\s]+)['\"]"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "loose"
     },
     {
       "description": "Match on comments for zarf and k3d github actions in yaml files.",
