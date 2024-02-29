@@ -59,7 +59,7 @@
       "depNameTemplate": "defenseunicorns/zarf",
       "fileMatch": ["README\\.md"],
       "matchStrings": [
-        "- \\[Zarf\\].*\\sversion:\\s(?<currentValue>.*) or later"
+        "- \\[Zarf\\].*\\sversion:\\s(?<currentValue>.*)$"
       ],
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -68,7 +68,7 @@
       "depNameTemplate": "k3d-io/k3d",
       "fileMatch": ["README\\.md"],
       "matchStrings": [
-        "- \\[K3d\\].*\\sversion:\\s(?<currentValue>.*) or later"
+        "- \\[K3d\\].*\\sversion:\\s(?<currentValue>.*)$"
       ],
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>.*)$"
