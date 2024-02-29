@@ -27,11 +27,21 @@
         "^zarf\\.yaml$"
       ],
       "matchStrings": [
-	"- (?<depName>.*):(?<currentValue>v\\d+\\.\\d+\\.\\d+)", 
+	"- (?<depName>.*):(?<currentValue>v\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "semver"
+    },
+    {
+      "description": "Match on images in zarf yaml (e.g. default: registry/repo/image:tag)",
+      "fileMatch": [ 
+        "^zarf\\.yaml$"
+      ],
+      "matchStrings": [
         "default: ['\"]?(?<depname>[^\"'\\s]+):v(?<currentValue>[^\"'\\s]+)['\"]"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "semver-coerced"
+      "versioningTemplate": "loose"
     },
     {
       "description": "Match on comments for zarf and k3d github actions in yaml files.",
