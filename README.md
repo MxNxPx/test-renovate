@@ -10,4 +10,3 @@
 - [Zarf](https://docs.zarf.dev/docs/getting-started#installing-zarf) version: 0.31.0
 - [K3d](https://k3d.io/#installation) version: 5.4.6
 - [Docker](https://docs.docker.com/get-docker/) or [Podman](https://podman.io/getting-started/installation) for running K3d
-
