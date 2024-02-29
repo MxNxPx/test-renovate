@@ -28,7 +28,7 @@
       ],
       "matchStrings": [
 	"- (?<depName>.*):(?<currentValue>v\\d+\\.\\d+\\.\\d+)", 
-        "default: ['\"]?(?<depname>[^\"'\\s]+):(?<currentValue>[^\"'\\s]+)['\"]"
+        "default: ['\"]?(?<depname>[^\"'\\s]+):v(?<currentValue>[^\"'\\s]+)['\"]"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver-coerced"
