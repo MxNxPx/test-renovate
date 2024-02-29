@@ -28,6 +28,11 @@ variables:
   - name: GITHUB_RUNNER_STORAGE_SIZE
     prompt: true
     default: "1Gi"
+  - name: K3D_IMAGE
+    description: "K3d image to use"
+    # renovate: datasource=docker depName=rancher/k3s versioning=semver
+    default: "rancher/k3s:v1.27.4-k3s1"
+
 
 components:
 - name: zarf-ignore-arc-runners-ns

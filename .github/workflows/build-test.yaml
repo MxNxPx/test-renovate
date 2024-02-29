@@ -1,0 +1,30 @@
+name: Test UDS Capability
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "CODEOWNERS"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  test-clean-install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Zarf
+        uses: defenseunicorns/setup-zarf@main
+        with:
+          # renovate: datasource=github-tags depName=defenseunicorns/zarf versioning=semver
+          version: v0.32.4
+
+      # renovate: datasource=github-tags depName=k3d-io/k3d versioning=semver
+      - run: "curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.6.0 bash"
+        shell: bash
+
