@@ -30,7 +30,7 @@ variables:
     default: "1Gi"
   - name: K3D_IMAGE
     description: "K3d image to use"
-    # renovate: datasource=docker depName=rancher/k3s versioning=semver
+    # renovate: datasource=docker depName=rancher/k3s versioning=loose
     default: "rancher/k3s:v1.27.4-k3s1"
 
 
