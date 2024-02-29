@@ -53,7 +53,7 @@
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*(?<currentValue>.*)\\s",
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*['\"](?<currentValue>.*)['\"]\\s",
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*\\sTAG=(?<currentValue>.*)\\sbash.*",
-        "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*\\sversion:\\s(?<currentValue>.*)\\sor\\slater.*"
+        "# \\(renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\)\n.*\\sversion:\\s(?<currentValue>.*)\\sor\\slater.*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "github-tags"
