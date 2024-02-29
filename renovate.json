@@ -41,15 +41,19 @@
         "default: ['\"]?(?<depname>[^\"'\\s]+):v(?<currentValue>[^\"'\\s]+)['\"]"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "loose"
+      "versioningTemplate": "semver-coerced"
     },
     {
-      "description": "Match on comments for zarf and k3d github actions in yaml files.",
-      "fileMatch": ["./.+\\.ya?ml$"],
+      "description": "Match on comments for zarf and k3d github actions in yaml and md files.",
+      "fileMatch": [
+        "./.+\\.ya?ml$",
+        "./.+\\.md$"
+      ],
       "matchStrings": [
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*(?<currentValue>.*)\\s",
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*['\"](?<currentValue>.*)['\"]\\s",
-        "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*\\sTAG=(?<currentValue>.*)\\sbash.*"
+        "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*\\sTAG=(?<currentValue>.*)\\sbash.*",
+        "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*\\sversion:\\s(?<currentValue>.*)\\sor\\slater.*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "github-tags"
