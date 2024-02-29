@@ -38,7 +38,7 @@
         "^zarf\\.yaml$"
       ],
       "matchStrings": [
-        "default: ['\"]?(?<depname>[^\"'\\s]+):v(?<currentValue>[^\"'\\s]+)['\"]"
+        "default: ['\"]?(?<depName>[^\"'\\s]+):v(?<currentValue>[^\"'\\s]+)['\"]"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver-coerced"
