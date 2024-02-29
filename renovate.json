@@ -28,7 +28,7 @@
       ],
       "matchStrings": [
 	"- (?<depName>.*):(?<currentValue>v\\d+\\.\\d+\\.\\d+)", 
-        "default: ['\"](?<depName>.*):(?<currentValue>v\\d+\\.\\d+\\.\\d+)['\"]"
+        "default: ['\"](?<depName>.*):(?<currentValue>.*)['\"]"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver"
