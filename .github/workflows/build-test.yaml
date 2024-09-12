@@ -25,6 +25,6 @@ jobs:
           version: v0.32.2
 
       # renovate: datasource=github-tags depName=k3d-io/k3d versioning=semver
-      - run: "curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.4.6 bash"
+      - run: "curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.7.4 bash"
         shell: bash
 
