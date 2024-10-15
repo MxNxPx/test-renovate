@@ -23,7 +23,7 @@
     },
     {
       "description": "Match on images in zarf yaml (e.g. - registry/repo/image:tag)",
-      "fileMatch": [ 
+      "fileMatch": [
         "^zarf\\.yaml$"
       ],
       "matchStrings": [
@@ -34,7 +34,7 @@
     },
     {
       "description": "Match on images in zarf yaml (e.g. default: registry/repo/image:tag)",
-      "fileMatch": [ 
+      "fileMatch": [
         "^zarf\\.yaml$"
       ],
       "matchStrings": [
@@ -104,5 +104,8 @@
       "updateTypes": ["patch"],
       "labels": ["renovate/image-release", "dependency/patch"]
     }
-  ]
+  ],
+  "pre-commit": {
+    "enabled": true
+  }
 }
