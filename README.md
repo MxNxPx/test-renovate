@@ -1,6 +1,7 @@
 # test-renovate
 
 [//]: # (This is a comment.)
+[//]: # (This is another comment.)
 
 > [!NOTE]
 > UDS K3d intentionally does not address airgap concerns for K3d or the load balancer logic deployed in this package. This allows running `zarf init` or deploying a Zarf Init Package via a UDS Bundle after the UDS K3d environment is deployed.
